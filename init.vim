@@ -94,13 +94,13 @@ let g:NERDTrimTrailingWhitespace = 1
 
 
 " ============ airline ================
-let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint'] }
-let g:ale_fixers = { 'javascript': ['prettier']}
 let g:airline_powerline_fonts = 1
 
 
 " ============ ale =============
 let g:ale_fix_on_save = 1
+let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint'] }
+let g:ale_fixers = { 'javascript': ['prettier']}
 
 
 "============= easymotion ================
