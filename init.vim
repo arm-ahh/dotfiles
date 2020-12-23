@@ -20,7 +20,6 @@ Plug 'mattn/emmet-vim'
 
 Plug 'tpope/vim-surround'
 
-
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'vim-airline/vim-airline'
@@ -38,7 +37,14 @@ Plug 'easymotion/vim-easymotion'
 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
+Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'Yggdroot/indentLine'
+
+Plug 'sheerun/vim-polyglot'
+
 call plug#end()
+let g:python_highlight_all = 1
 
 set number
 let mapleader = ";"
@@ -56,19 +62,36 @@ let base16colorspace=256
 " colorscheme base16-default-dark
 " let g:rehash256 = 1
 " colorscheme onehalfdark
-colorscheme one
+" colorscheme gruvbox
+colorscheme dracula
 set background=dark " for the dark version
+
+" ============ cursor style ===============
+highlight Cursor guifg=white guibg=orange
+highlight iCursor guifg=white guibg=red
+set guicursor=n-v-c:block-Cursor
+set guicursor+=i:ver100-iCursor
+set guicursor+=n-v-c:blinkon0
+set guicursor+=i:blinkwait10
+
+set guicursor=i:ver40-iCursor
 
 
 " ============ nerdtree =================
-map <C-n> :NERDTreeToggle<CR>
+map <C-i> :NERDTreeToggle<CR>
+
+" Start NERDTree when Vim is started without file arguments.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
+" Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | exe 'cd '.argv()[0] | endif
 
+" close nerdtree after a file has been opened
+let NERDTreeQuitOnOpen=1
 
+" ignore node_modules folder
 let g:NERDTreeIgnore = ['^node_modules$']
 
 
@@ -99,9 +122,13 @@ let g:airline_powerline_fonts = 1
 
 " ============ ale =============
 let g:ale_fix_on_save = 1
-let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint'] }
-let g:ale_fixers = { 'javascript': ['prettier']}
+let g:ale_linters = { 'javascript': ['eslint'], 'typescript': ['tslint'], 'python': ['pylint'] }
+let g:ale_fixers = { 'javascript': ['prettier'], 'python': ['black']}
 
+let g:ale_sign_error = '✘'
+let g:ale_sign_warning = '⚠'
+highlight ALEErrorSign ctermbg=NONE ctermfg=red
+highlight ALEWarningSign ctermbg=NONE ctermfg=yellow
 
 "============= easymotion ================
 " s{char}{char} to move to {char}{char}
@@ -114,6 +141,10 @@ nmap <Leader>L <Plug>(easymotion-overwin-line)
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
 nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+
+" =========== indentLine ===============
+let g:indentLine_char = '|'
 
 
 " =========== coc.nvim ==================
