@@ -15,6 +15,8 @@ Plug 'chriskempson/base16-vim'
 Plug 'tomasr/molokai'
 Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'rakr/vim-one'
+Plug 'rafalbromirski/vim-aurora'
+
 
 Plug 'mattn/emmet-vim'
 
@@ -43,38 +45,47 @@ Plug 'Yggdroot/indentLine'
 
 Plug 'sheerun/vim-polyglot'
 
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
+
+Plug 'honza/vim-snippets'
+
 call plug#end()
 let g:python_highlight_all = 1
 
 set number
 let mapleader = ";"
 :set termbidi
-
 inoremap jk <ESC>
 
 :set tabstop=4
 :set shiftwidth=4
 :set expandtab
 
-
 set termguicolors
 let base16colorspace=256
 " colorscheme base16-default-dark
 " let g:rehash256 = 1
 " colorscheme onehalfdark
-" colorscheme gruvbox
-colorscheme dracula
+" colorscheme dracula
 set background=dark " for the dark version
+colorscheme gruvbox
+" colorscheme aurora
+
 
 " ============ cursor style ===============
-highlight Cursor guifg=white guibg=orange
-highlight iCursor guifg=white guibg=red
-set guicursor=n-v-c:block-Cursor
-set guicursor+=i:ver100-iCursor
-set guicursor+=n-v-c:blinkon0
-set guicursor+=i:blinkwait10
+" highlight Cursor guifg=white guibg=orange
+" highlight iCursor guifg=white guibg=red
+" set guicursor=n-v-c:block-Cursor
+" set guicursor+=i:ver100-iCursor
+" set guicursor+=n-v-c:blinkon0
+" set guicursor+=i:blinkwait10
+"
+" set guicursor=i:ver40-iCursor
 
-set guicursor=i:ver40-iCursor
+
+" ============ highlight bad workspace ==============
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+highlight BadWhitespace ctermbg=red guibg=darkred
 
 
 " ============ nerdtree =================
