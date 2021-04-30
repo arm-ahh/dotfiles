@@ -20,6 +20,6 @@ omf install shellder
 ```
 # Customization
 ```
-touch init.fish \$CMD_DURATION
+touch init.fish $CMD_DURATION
 ```
 put your costumizations in init.fish file.
