@@ -1,0 +1,11 @@
+alias gi='git init'                                                          
+alias gss='git status -s'                                                    
+alias gst='git status'                                                       
+alias gl='git log'                                                           
+alias gc='git commit -m'                                                     
+alias gac='git commit --amend --no-edit'                                     
+alias gaa='git add -A' 
+alias ..='cd ..'
+alias ...='cd ../..'
+alias c='clear'
+
