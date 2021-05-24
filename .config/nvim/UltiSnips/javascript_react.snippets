@@ -1,0 +1,19 @@
+global !p
+# Capitalize the first letter without affecting the rest of the letters
+def capitalize_first(word):
+	if(word):
+		word = word[0].upper() + word[1:]
+	return word
+endglobal
+
+snippet rfc "react functional component" b
+const ${1:`!p snip.rv = snip.basename`} = (${2}) => {
+	return(
+		<div>
+		${3}
+		</div>
+		)
+}
+
+export default $4`!p snip.rv = snip.basename`
+endsnippet
