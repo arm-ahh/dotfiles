@@ -78,7 +78,6 @@ cursor:
     unfocused_hollow: true
 
 key_bindings:
-    - { key: N, mods: Control, action: SpawnNewInstance }
     - { key: C, mods: Control|Shift, action: Copy }
     - { key: V, mods: Control|Shift, action: Paste }
     - { key: PageUp, mods: None, action: ScrollPageUp, mode: ~Alt }
