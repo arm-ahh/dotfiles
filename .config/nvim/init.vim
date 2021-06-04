@@ -43,6 +43,8 @@ inoremap jk <ESC>
 nmap <leader>sv <C-W>v
 nmap <leader>sh <C-W>s
 nmap <leader>sq <C-W>q
+nmap <leader>sf <C-W>|
+nmap <leader>s= <C-W>=
 
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
@@ -81,6 +83,7 @@ let NERDTreeQuitOnOpen=1
 " ignore node_modules folder
 let g:NERDTreeIgnore = ['^node_modules$']
 
+map <leader>r :NERDTreeFind<cr>
 
 " ============ nerdtree git plugin ========================
 let g:NERDTreeGitStatusUseNerdFonts = 1
@@ -126,8 +129,6 @@ let g:airline_theme='gruvbox'
 
 " =========== indentLine ===============
 let g:indentLine_char = '|'
-
-" =========== coc-snippets ==============
 
 
 " =========== coc.nvim ==================

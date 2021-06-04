@@ -1,0 +1,29 @@
+add_newline = true
+command_timeout = 2000
+
+[nodejs]
+format = "[$symbol($version )]($style)"
+style = "fg:#6bcf6a"
+
+[python]
+format = ""
+
+[character]
+success_symbol = "[➜](bold green) "
+error_symbol = "[✗](bold red) "
+vicmd_symbol = "[V ➜](bold fg:#4dfd4d)"
+
+[directory]
+truncation_length = 4
+format = "[$path]($style)[$read_only]($read_only_style) "
+style = "fg:#4dfd4d"
+
+[git_branch]
+format="[$symbol$branch]($style) "
+style = "fg:#fd4d4d"
+
+[git_status]
+format = '([\[$untracked$modified\]]($style) )'
+
+[package]
+disabled = true

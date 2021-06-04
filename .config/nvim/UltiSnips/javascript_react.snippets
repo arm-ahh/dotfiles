@@ -6,8 +6,14 @@ def capitalize_first(word):
 	return word
 endglobal
 
-snippet rfc "react functional component" b
-const ${1:`!p snip.rv = snip.basename`} = (${2}) => {
+snippet rfc "react functional component (typescript)" b
+import React from 'react'
+
+interface $5`!p snip.rv = snip.basename` {
+	$6
+}
+
+const ${1:`!p snip.rv = snip.basename`}: React.FC<`!p  snip.rv = snip.basename`> = (${2}) => {
 	return(
 		<div>
 		${3}
